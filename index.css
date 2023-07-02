@@ -1,0 +1,333 @@
+body {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 2px solid lightgray;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.image {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 1s all;
+    padding: 2px;
+}
+
+.image:hover {
+    border-bottom: 1px solid lightgray;
+    filter: blur(1px);
+}
+.navbar-items a {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    transition: 1s all;
+}
+
+.hamburger {
+    display: none;
+    height: 50px;
+}
+
+.bar {
+    width: 36px;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+.navbar a:hover {
+    border-bottom: 1px solid lightgray;
+    color: grey;
+}
+
+h1 {
+    align-items: center;
+    font-weight: bolder;
+    font-size:1.5rem;
+    transition: 0.5s all;
+}
+
+h1:hover {
+    border-bottom: 1px solid lightgray;
+    color:grey;
+}
+
+.grid-container {
+    margin: 30px auto 0 auto;
+    display: grid;
+    width: 95%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+        "a a b"
+        "a a e"
+        "c d e"
+        "c d e"
+        "f g g"
+        "f g g"
+        "h h i"
+        "h h i"
+        ;
+    gap: 5px;
+}
+
+.image1 {
+    grid-area: a;
+}
+
+.image2 {
+    grid-area: b;
+}
+
+.image3 {
+    grid-area: c;
+}
+
+.image4 {
+    grid-area: d;
+}
+
+.image5 {
+    grid-area: e;
+}
+
+.image6 {
+    grid-area: f;
+}
+
+.image7 {
+    grid-area: g;
+}
+
+.image8 {
+    grid-area: h;
+}
+
+.image9 {
+    grid-area: i;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s opacity;
+}
+
+.image-container:hover {
+    opacity: 0.8;
+}
+
+.image-heading {
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s opacity;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.image-heading:hover {
+    opacity: 1;
+}
+
+.footer {
+    width: 100%;
+    height: 50px;
+}
+
+.footer-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 50px;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media screen and (max-width:750px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+            "a b"
+            "c d"
+            "e f"
+            "g h"
+            "i i";    
+    }
+
+    .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9 {
+        height: 400px;
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+    .navbar-items {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        height: 50px;
+        padding-top: 23px;
+        margin-right: 15px;
+        z-index:999;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+    }
+
+    .mobile-nav {
+        display: flex;
+        width: 100px;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: -100px;
+
+    }
+
+    .mobile-nav a {
+        margin: 20px auto;
+        text-decoration: none;
+        transition: 1s all;
+        color: black;
+    }
+
+    .mobile-nav a:hover {
+        border-bottom: 2px solid gray;
+        color: gray;
+    }
+
+    .mobile-nav img {
+        width: 25px;
+        height: 25px;
+        margin: 20px auto;
+        transition: 1s all;
+    }
+
+    .mobile-nav img:hover {
+        border-bottom: 1px solid lightgray;
+        filter: blur(1px);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas: 
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f"
+            "g"
+            "h"
+            "i";
+    }
+
+    .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9 {
+        height: 300px;
+    }
+
+    @keyframes fadeBar2 {
+        from {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+
+        to {
+            transform: scaleX(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes flipBar1 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(45deg) translate(1px, 10px);
+        }
+    }
+
+    @keyframes flipBar3 {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-45deg) translate(1px, -10px);
+        }
+    }
+
+    @keyframes navbar {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100px);
+        }
+    }
+
+    .animateBar1 {
+        animation: flipBar1 0.5s 1;
+        animation-fill-mode: forwards;
+    }
+
+    .animateBar2 {
+        animation: fadeBar2 0.5s ;
+        animation-fill-mode: forwards;
+    }
+
+    .animateBar3{
+        animation: flipBar3 0.5s 1;
+        animation-fill-mode: forwards;
+    }
+
+    .animateNavBar {
+        animation: navbar 0.5s 1;
+        animation-fill-mode: forwards;
+    }
+}
